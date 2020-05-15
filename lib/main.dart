@@ -67,7 +67,8 @@ class RandomWordsState extends State<RandomWords> {
   }
 
   void _pushSaved() {
-    Navigator.of(context).push(new MaterialPageRoute<void>(builder: (BuildContext context) {
+    Navigator.of(context)
+        .push(new MaterialPageRoute<void>(builder: (BuildContext context) {
       final Iterable<ListTile> tiles = _saved.map((WordPair pair) {
         return ListTile(
           title: Text(
@@ -76,7 +77,8 @@ class RandomWordsState extends State<RandomWords> {
           ),
         );
       });
-      final List<Widget> divided = ListTile.divideTiles(tiles: tiles, context: context).toList();
+      final List<Widget> divided =
+          ListTile.divideTiles(tiles: tiles, context: context).toList();
       return Scaffold(
         appBar: AppBar(
           title: const Text('Saved Suggestions'),
