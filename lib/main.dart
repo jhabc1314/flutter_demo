@@ -62,3 +62,31 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+class Counter extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return
+  }
+}
+
+class _CounterState extends State<Counter> {
+  int _counter = 0;
+
+  void _increment() {
+    setState(() {
+      _counter++;
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Row(
+      children: <Widget>[
+        RaisedButton(onPressed: _increment,child: Text('increment'),),
+        Text('Count:$_counter')
+      ],
+    )
+  }
+}
